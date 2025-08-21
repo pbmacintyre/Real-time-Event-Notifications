@@ -6,7 +6,7 @@
 /* ================= */
 
 function app_name() {
-	return "MMS Demo App";
+	return "Real Time Event Notifications Demo App";
 }
 
 /* ================== */
