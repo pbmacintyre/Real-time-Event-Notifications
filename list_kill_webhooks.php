@@ -27,7 +27,7 @@ foreach ($subscriptions as $subscription) {
 	echo_spaces("Webhook transport type", $subscription->deliveryMode->transportType);
 	echo_spaces("Event Filter(s) URI", $subscription->eventFilters);
 
-	if ($subscription->id == "73404c58-aabe-4635-9429-634196f5c837") {
+	if ($subscription->id == "e94bae96-2556-4971-8a5f-23fc86410828") {
 		$response = $controller['platform']->delete("/restapi/v1.0/subscription/{$subscription->id}");
 		echo_spaces("Subscription ID Deleted", $subscription->id, 1);
 	}
