@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="453dad58-c155-48c5-97a0-167a0f0f77f7" name="Real Time Event Notifications" url="http://ftp.paladin-bs.com">
+        <fileTransfer rootFolder="/real_time_events" host="ftp.paladin-bs.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
