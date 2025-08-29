@@ -25,9 +25,22 @@ foreach ($subscriptions as $subscription) {
 	echo_spaces("Creation Time", $subscription->creationTime);
 	echo_spaces("Webhook URI", $subscription->deliveryMode->address);
 	echo_spaces("Webhook transport type", $subscription->deliveryMode->transportType);
-	echo_spaces("Event Filter(s) URI", $subscription->eventFilters);
 
-	if ($subscription->id == "e94bae96-2556-4971-8a5f-23fc86410828") {
+    foreach ($subscription->eventFilters as $event_url) {
+
+        $query = parse_url($event_url, PHP_URL_QUERY);
+        // $query = "type=Fax&direction=Inbound"
+
+        parse_str($query, $params);
+        // $params = ['type' => 'Fax', 'direction' => 'Inbound'];
+
+        echo_spaces("Event Type", $params['type']);
+    }
+    echo_spaces("Event Filter(s) URI", $subscription->eventFilters);
+
+
+
+	if ($subscription->id == "2b95d0da-eae7-4fb6-82c3-38d26fa5c498") {
 		$response = $controller['platform']->delete("/restapi/v1.0/subscription/{$subscription->id}");
 		echo_spaces("Subscription ID Deleted", $subscription->id, 1);
 	}
