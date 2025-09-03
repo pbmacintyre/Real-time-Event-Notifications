@@ -16,12 +16,10 @@ page_header();
             <img alt="RingCentral Logo" src="images/rc-logo.png"/>
             <?php
 
-            $subscription_url = "https://" . $_SERVER['HTTP_HOST'];
             require(__DIR__ . '/includes/vendor/autoload.php');
             $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/includes")->load();
 
-            $url_suffix = $_ENV['RC_WEBHOOK_URL_SUFFIX'];
-            $subscription_url .= $url_suffix;
+            $subscription_url = "https://" . $_SERVER['HTTP_HOST'] . $_ENV['RC_WEBHOOK_URL_SUFFIX'];
 
             $controller = ringcentral_sdk();
 
@@ -36,6 +34,7 @@ page_header();
                 foreach ($subscriptions as $subscription) {
                     echo_spaces("Webhook ID", $subscription->id);
                     echo_spaces("Creation Time", $subscription->creationTime);
+                    echo_spaces("Expires", $subscription->expirationTime);
 //                    echo_spaces("Webhook URI", $subscription->deliveryMode->address);
 //                    echo_spaces("Webhook transport type", $subscription->deliveryMode->transportType);
 //                    echo_spaces("Event Filter(s) URI", $subscription->eventFilters);

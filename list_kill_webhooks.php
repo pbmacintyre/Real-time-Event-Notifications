@@ -23,6 +23,7 @@ foreach ($subscriptions as $subscription) {
 
 	echo_spaces("Subscription ID", $subscription->id);
 	echo_spaces("Creation Time", $subscription->creationTime);
+	echo_spaces("Expires", $subscription->expirationTime);
 	echo_spaces("Webhook URI", $subscription->deliveryMode->address);
 	echo_spaces("Webhook transport type", $subscription->deliveryMode->transportType);
 
@@ -40,12 +41,13 @@ foreach ($subscriptions as $subscription) {
 
 
 
-	if ($subscription->id == "2b95d0da-eae7-4fb6-82c3-38d26fa5c498") {
-		$response = $controller['platform']->delete("/restapi/v1.0/subscription/{$subscription->id}");
+	if ($subscription->id == "f7a15b17-3339-44fe-947f-b2e8e96d28a3") {
+		$response = $controller['platform']->delete("/restapi/v1.0/subscription/$subscription->id");
 		echo_spaces("Subscription ID Deleted", $subscription->id, 1);
 	}
 }
 ?>
+<br/>
 <a href="index.php"> Return to home page </a>
 
 

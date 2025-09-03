@@ -20,7 +20,7 @@ function show_form($message, $print_again = false) {
             <tr>
                 <td colspan="3" class="EditTableFullCol">
                     <?php
-                    if ($print_again == true) {
+                    if ($print_again) {
                         echo "<p class='msg_bad'>" . $message . "</strong></font>";
                     } else {
                         echo "<p class='msg_good'>" . $message . "</p>";
