@@ -7,7 +7,7 @@ session_start();
 
 require_once('includes/ringcentral-functions.inc');
 require_once('includes/ringcentral-php-functions.inc');
-require_once('includes/ringcentral-db-functions.inc');
+//require_once('includes/ringcentral-db-functions.inc');
 
 // show_errors();
 

@@ -47,8 +47,9 @@ page_header();
                         parse_str($query, $params);
                         // $params = ['type' => 'event type', 'direction' => 'Inbound'];
                         $existing_events[] = $params['type'] ;
-                        echo_spaces("Existing Event Type", $params['type'] . " " . $params['direction'],1);
+                        echo_spaces("Existing Event Type", $params['type'] . " " . $params['direction']);
                     }
+                    echo_spaces();
                 }
             }
             if ($_SESSION['event_types']['voice']) {
@@ -79,6 +80,7 @@ page_header();
                     $event_filters[] = "/restapi/v1.0/account/~/extension/~/message-store?type=SMS&direction=Inbound";
                 }
             }
+            echo_spaces();
 
             // create the webhook for the provided event type(s)
             if ($event_filters) {

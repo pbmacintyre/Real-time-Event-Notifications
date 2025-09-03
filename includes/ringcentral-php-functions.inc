@@ -32,8 +32,10 @@ function show_errors() {
 //     error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
     ini_set('display_errors', 1);
 }
-function echo_spaces($text, $value="", $lines=0) {
-    echo "<br /><strong><p style='color: red; display: inline'>$text";
+function echo_spaces($text="", $value="", $lines=0) {
+    if ($text) {
+		echo "<br /><strong><p style='color: red; display: inline'>$text";
+	}
 	if ($value !== "") { echo ": " ; }
 	echo "</p></strong> ";
     if (is_string($value) || is_int($value))  { echo $value; }

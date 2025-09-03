@@ -47,3 +47,5 @@ foreach ($subscriptions as $subscription) {
 }
 ?>
 <a href="index.php"> Return to home page </a>
+
+
