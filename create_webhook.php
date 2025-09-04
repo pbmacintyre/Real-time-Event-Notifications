@@ -23,7 +23,7 @@ page_header();
 
             $controller = ringcentral_sdk();
 
-            //  code for limiting subscription creation if types already exists.
+            //  code for limiting subscription creation if some event types already exist
 
             $existing_events = array();
 
